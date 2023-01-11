@@ -18,9 +18,13 @@ const Layout = () => {
 
 function App() {
   const router = createBrowserRouter([
-    { path: "/", element: <Home/> },
-    { path: "/products/:id", element: <Products/> },
-    { path: "/product/:id", element: <Product/> },
+    { path: "/", element: <Layout/> ,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "products/:id", element: <Products /> },
+      { path: "product/:id", element: <Product /> },
+    ],
+  }
   ]);
 
   return <RouterProvider router={router} />;
