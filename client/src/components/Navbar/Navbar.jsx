@@ -1,4 +1,5 @@
 import React from "react";
+import "./navbar.scss";
 import { NavLink } from "react-router-dom";
 //icons
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -23,31 +24,39 @@ const Navbar = () => {
             <KeyboardArrowDownIcon />
           </div>
           <div className="item">
-            <NavLink to="/products/1">Women</NavLink>
+            <NavLink className="link" to="/products/1">Women</NavLink>
           </div>
           <div className="item">
-            <NavLink to="/products/2">Men</NavLink>
+            <NavLink className="link" to="/products/2">Men</NavLink>
           </div>
           <div className="item">
-            <NavLink to="/products/3">Children</NavLink>
+            <NavLink className="link" to="/products/3">Children</NavLink>
           </div>
         </div>
         <div className="center">
-          <NavLink to="/">MISZASTORE</NavLink>
+          <NavLink className="link" to="/">MISZASTORE</NavLink>
         </div>
         <div className="right">
-          <NavLink to="/">MISZASTORE</NavLink>
-          <NavLink to="/">About</NavLink>
-          <NavLink to="/">Contact</NavLink>
-          <NavLink to="/">Stores</NavLink>
-        </div>
-        <div className="icons">
-          <SearchIcon />
-          <PersonOutlineOutlinedIcon />
-          <FavoriteBorderOutlinedIcon />
-          <div className="cartIcon">
-            <ShoppingCartOutlinedIcon />
-            <span>0</span>
+          <div className="item">
+            <NavLink className="link" to="/">Homepage</NavLink>
+          </div>
+          <div className="item">
+            <NavLink className="link" to="/about">About</NavLink>
+          </div>
+          <div className="item">
+            <NavLink className="link" to="/contact">Contact</NavLink>
+          </div>
+          <div className="item">
+          <NavLink className="link" to="/stores">Stores</NavLink>
+          </div>
+          <div className="icons">
+            <SearchIcon />
+            <PersonOutlineOutlinedIcon />
+            <FavoriteBorderOutlinedIcon />
+            <div className="cartIcon">
+              <ShoppingCartOutlinedIcon />
+              <span>0</span>
+            </div>
           </div>
         </div>
       </div>
@@ -56,3 +65,23 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// let activeStyle = {
+//   textDecoration: "underline",
+// };
+
+// let activeClassName = "underline";
+
+// return (
+//   <nav>
+//     <ul>
+//       <li>
+//         <NavLink
+//           to="messages"
+//           style={({ isActive }) =>
+//             isActive ? activeStyle : undefined
+//           }
+//         >
+//           Messages
+//         </NavLink>
+//       </li>
