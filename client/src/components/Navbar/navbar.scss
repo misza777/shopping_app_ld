@@ -1,39 +1,70 @@
+@use '../../scss/abstracts'as *;
+
 .navbar {
-    height: 80px;
-       .wrapper {
-                padding: .7em 2.2em;
+    height: 15vh;
+
+    .wrapper {
+        padding: .7em 2.2em;
+        display: flex;
+        justify-content: space-between;
+
+        .item {
+            display: flex;
+            align-items: center;
+            font-size: $fs-500;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .center {
+            display: flex;
+            align-items: center;
+            font-size: $fs-700;
+            letter-spacing: .15em;
+        }
+
+        .right {
+            // gap: 25px;
+            gap: 1em;
+            display: flex;
+            align-items: center;
+
+            .icons {
                 display: flex;
-                justify-content: space-between;
-
-                .item {
-                    display: flex;
-                    align-items: center;
+                gap: 1rem;
+                color: $clr-main-primary-light;
+                gap: .9rem;
+                cursor: pointer;
+            }
+            .cartIcon {
+                position: relative;
+      
+                span {
+                  font-size: $fs-300;
+                  width: 16px;
+                  height: 16px;
+                  border-radius: 50%;
+                  background-color: #2879fe;
+                  color: $clr-main-secondary;
+                  position: absolute;
+                  right: -10px;
+                  top: -10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
                 }
+              }
+        }
 
-                .left {
-                    // width: 30%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 1em;
-                }
-                .center {
-                    // width: 100%;
-                    display: flex;
-                    align-items: center;
-                    // justify-content: space-between;
-                }
-                .right {
-                    gap: 1em;
-                    // width: 40%;
-                    display: flex;
-                    // align-items: center;
-                    // justify-content: space-between;
+        .flag {
+            width: 30px;
+        }
 
-                    .icons {
-                        display: flex;
-                    }
-                    }
-       } 
+    }
 
 }
