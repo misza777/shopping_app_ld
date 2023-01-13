@@ -30,7 +30,7 @@
             flex-direction: column;
             gap: 10px;
             text-align: justify;
-            color: $clr-main-primary-light;
+            color: $clr-text-primary-light;
         }
     }
     
@@ -42,12 +42,12 @@
 
         .left {
             .logo {
-                color: $clr-main-secondary;
+                color: $clr-text-secondary;
                 font-weight: $fw-bold;
                 font-size: $fs-600;
             }
             .copyright {
-                color: $clr-main-primary-light;
+                color: $clr-text-primary-light;
                 font-size: $fs-200;
             }
         }

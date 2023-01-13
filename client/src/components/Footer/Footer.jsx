@@ -45,7 +45,7 @@ const Footer = () => {
           <span className="logo">MCommerce</span>
           <span className="copyright"> © 2023 All rights reserved.</span>
         </div>
-        <icons className="right">
+        <div className="right">
           <img
             className="footer_icon"
             src="/img/paypal-svgrepo.svg"
@@ -72,7 +72,7 @@ const Footer = () => {
             src="/img/mastercard-wine.svg"
             alt="revolut"
           />
-        </icons>
+        </div>
       </div>
     </div>
   );

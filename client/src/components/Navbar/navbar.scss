@@ -1,7 +1,7 @@
 @use '../../scss/abstracts'as *;
 
 .navbar {
-    height: 15vh;
+    height: 80px;
 
     .wrapper {
         padding: .7em 2.2em;
@@ -37,7 +37,7 @@
             .icons {
                 display: flex;
                 gap: 1rem;
-                color: $clr-main-primary-light;
+                color: $clr-text-primary-light;
                 gap: .9rem;
                 cursor: pointer;
             }
@@ -51,7 +51,7 @@
                     height: 16px;
                     border-radius: 50%;
                     background-color: #2879fe;
-                    color: $clr-main-secondary;
+                    color: $clr-text-secondary-light;
                     position: absolute;
                     right: -5px;
                     top: -5px;
