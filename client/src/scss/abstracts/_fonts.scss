@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap');
 
-$ff-primary: Poppins, sans-serif;
+$ff-primary: Poppins,
+sans-serif;
 $ff-body: $ff-primary;
 // $ff-heading: $ff-primary;
 
@@ -8,10 +9,12 @@ $fw-regular: 400;
 $fw-semi-bold: 500;
 $fw-bold: 700;
 
+// // 12px
+$fs-200: 0.75rem;
 // // 13px
-$fs-300: 0.8125rem; 
+$fs-300: 0.8125rem;
 // // 14px
-$fs-400: 0.875rem; 
+$fs-400: 0.875rem;
 // // 15px
 $fs-500: 0.9375rem;
 // //  16px

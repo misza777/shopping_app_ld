@@ -41,24 +41,25 @@
                 gap: .9rem;
                 cursor: pointer;
             }
+
             .cartIcon {
                 position: relative;
-      
+
                 span {
-                  font-size: $fs-300;
-                  width: 16px;
-                  height: 16px;
-                  border-radius: 50%;
-                  background-color: #2879fe;
-                  color: $clr-main-secondary;
-                  position: absolute;
-                  right: -10px;
-                  top: -10px;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
+                    font-size: $fs-300;
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    background-color: #2879fe;
+                    color: $clr-main-secondary;
+                    position: absolute;
+                    right: -5px;
+                    top: -5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
-              }
+            }
         }
 
         .flag {
