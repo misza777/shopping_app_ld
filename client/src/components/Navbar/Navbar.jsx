@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.scss";
 import { NavLink } from "react-router-dom";
+import Cart from "../../components/Cart/Cart";
+
 //icons
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SearchIcon from "@mui/icons-material/Search";
@@ -11,6 +13,8 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { US } from "country-flag-icons/react/3x2";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -24,48 +28,66 @@ const Navbar = () => {
             <KeyboardArrowDownIcon />
           </div>
           <div className="item">
-            <NavLink className="link" to="/products/1">Women</NavLink>
+            <NavLink className="link" to="/products/1">
+              Women
+            </NavLink>
           </div>
           <div className="item">
-            <NavLink className="link" to="/products/2">Men</NavLink>
+            <NavLink className="link" to="/products/2">
+              Men
+            </NavLink>
           </div>
           <div className="item">
-            <NavLink className="link" to="/products/3">Children</NavLink>
+            <NavLink className="link" to="/products/3">
+              Children
+            </NavLink>
           </div>
         </div>
         <div className="center">
-          <NavLink className="link" to="/">MCommerce</NavLink>
+          <NavLink className="link" to="/">
+            MCommerce
+          </NavLink>
         </div>
         <div className="right">
           <div className="item">
-            <NavLink className="link" to="/">Homepage</NavLink>
+            <NavLink className="link" to="/">
+              Homepage
+            </NavLink>
           </div>
           <div className="item">
-            <NavLink className="link" to="/about">About</NavLink>
+            <NavLink className="link" to="/about">
+              About
+            </NavLink>
           </div>
           <div className="item">
-            <NavLink className="link" to="/contact">Contact</NavLink>
+            <NavLink className="link" to="/contact">
+              Contact
+            </NavLink>
           </div>
           <div className="item">
-          <NavLink className="link" to="/stores">Stores</NavLink>
+            <NavLink className="link" to="/stores">
+              Stores
+            </NavLink>
           </div>
           <div className="icons">
             <SearchIcon />
             <PersonOutlineOutlinedIcon />
             <FavoriteBorderOutlinedIcon />
-            <div className="cartIcon">
+            <div className="cartIcon" onClick={() => setOpen(!open)}>
               <ShoppingCartOutlinedIcon />
               <span>0</span>
             </div>
           </div>
         </div>
       </div>
+      {open && <Cart />}
     </div>
   );
 };
 
 export default Navbar;
 
+//style and activeClassName
 // let activeStyle = {
 //   textDecoration: "underline",
 // };
