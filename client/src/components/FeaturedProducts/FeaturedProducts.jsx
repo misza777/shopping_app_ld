@@ -15,7 +15,7 @@ const FeaturedProducts = ({ type }) => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          import.meta.env.VITE_REACT_APP_API_URL + "/products?populate=*",
+          `${import.meta.env.VITE_REACT_APP_API_URL}/products?populate=*&[filters][type][$eq]=${type}`,
           {
             headers: {
               Authorization: `bearer ${
