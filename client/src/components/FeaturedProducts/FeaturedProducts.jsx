@@ -1,16 +1,40 @@
-import React from 'react'
-import './featuredProducts.scss'
+import React, { useState, useEffect } from "react";
+import "./featuredProducts.scss";
 // import useFetch from "../../hooks/useFetch";
 import Card from "../Card/Card";
+import axios from "axios";
 
-const FeaturedProducts = ({type}) => {
-    // const { data, loading, error } = useFetch(
-    //     `/products?populate=*&[filters][type][$eq]=${type}`
-    //   );
+const FeaturedProducts = ({ type }) => {
+  // const { data, loading, error } = useFetch(
+  //     `/products?populate=*&[filters][type][$eq]=${type}`
+  //   );
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          import.meta.env.VITE_REACT_APP_API_URL + "/products?populate=*",
+          {
+            headers: {
+              Authorization: `bearer ${
+                import.meta.env.VITE_REACT_APP_API_TOKEN
+              }`,
+            },
+          }
+        );
+        setData(res.data.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <div className="featured_products">
-         <div className="top">
+      <div className="top">
         <h1>{type} products</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -25,10 +49,13 @@ const FeaturedProducts = ({type}) => {
           ? "Something went wrong!"
           : loading
           ? "loading"
-          : data?.map((item) => <Card item={item} key={item.id} />)} */}
+          :} */}
+        {data?.map((item) => (
+          <Card item={item} key={item.id} />
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FeaturedProducts
+export default FeaturedProducts;

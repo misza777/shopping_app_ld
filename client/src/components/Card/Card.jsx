@@ -12,7 +12,7 @@ const Card = ({ item }) => {
           {item?.attributes.isNew && <span>New Season</span>}
           <img
             src={
-              process.env.REACT_APP_UPLOAD_URL +
+              import.meta.env.VITE_REACT_APP_UPLOAD_URL +
               item.attributes?.img?.data?.attributes?.url
             }
             alt=""
@@ -20,7 +20,7 @@ const Card = ({ item }) => {
           />
           <img
             src={
-              process.env.REACT_APP_UPLOAD_URL +
+              import.meta.env.VITE_REACT_APP_UPLOAD_URL +
               item.attributes?.img2?.data?.attributes?.url
             }
             alt=""
