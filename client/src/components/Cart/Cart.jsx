@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { removeItem, resetCart } from "../../redux/cartReducer";
 import { useDispatch } from "react-redux";
 import { makeRequest } from "../../makeRequest";
-// import { loadStripe } from "@stripe/stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart.products);
@@ -18,10 +18,10 @@ const Cart = () => {
     });
     return total.toFixed(2);
   };
+  const stripePromise = loadStripe(
+    pk_test_51MRbZgDuW9MRNvgcJ4aMHT47Ce5GcbfR5l3ZvioRHrlQBlU4noIGGibOkBW2muPbXZijOqvyMbwUX6lhapd1YkCQ00ic6OW2Ip
+  );
 
-  //   const stripePromise = loadStripe(
-  //     "pk_test_eOTMlr8usx1ctymXqrik0ls700lQCsX2UB"
-  //   );
   const handlePayment = async () => {
     try {
       const stripe = await stripePromise;
