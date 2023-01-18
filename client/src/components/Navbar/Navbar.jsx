@@ -12,7 +12,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 //flags
 import { US } from "country-flag-icons/react/3x2";
 import FeaturedProducts from "../FeaturedProducts/FeaturedProducts";
-import { useSelector } from "react-redux";g
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);

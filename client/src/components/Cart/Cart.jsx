@@ -23,17 +23,17 @@ const Cart = () => {
   //     "pk_test_eOTMlr8usx1ctymXqrik0ls700lQCsX2UB"
   //   );
   const handlePayment = async () => {
-    // try {
-    //   const stripe = await stripePromise;
-    //   const res = await makeRequest.post("/orders", {
-    //     products,
-    //   });
-    //   await stripe.redirectToCheckout({
-    //     sessionId: res.data.stripeSession.id,
-    //   });
-    // } catch (err) {
-    //   console.log(err);
-    // }
+    try {
+      const stripe = await stripePromise;
+      const res = await makeRequest.post("/orders", {
+        products,
+      });
+      await stripe.redirectToCheckout({
+        sessionId: res.data.stripeSession.id,
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
   return (
     <div className="cart">
