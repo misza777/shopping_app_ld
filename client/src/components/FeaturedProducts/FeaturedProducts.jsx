@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./featuredProducts.scss";
 import useFetch from "../../hooks/useFetch";
 import Card from "../Card/Card";
-import axios from "axios";
 
 const FeaturedProducts = ({ type }) => {
   const { data, loading, error } = useFetch(
