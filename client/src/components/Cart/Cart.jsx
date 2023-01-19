@@ -18,8 +18,9 @@ const Cart = () => {
     });
     return total.toFixed(2);
   };
+
   const stripePromise = loadStripe(
-    pk_test_51MRbZgDuW9MRNvgcJ4aMHT47Ce5GcbfR5l3ZvioRHrlQBlU4noIGGibOkBW2muPbXZijOqvyMbwUX6lhapd1YkCQ00ic6OW2Ip
+    "pk_test_51MRbZgDuW9MRNvgcJ4aMHT47Ce5GcbfR5l3ZvioRHrlQBlU4noIGGibOkBW2muPbXZijOqvyMbwUX6lhapd1YkCQ00ic6OW2Ip"
   );
 
   const handlePayment = async () => {
@@ -35,6 +36,7 @@ const Cart = () => {
       console.log(err);
     }
   };
+
   return (
     <div className="cart">
       <h1>Products in your cart</h1>
@@ -59,7 +61,7 @@ const Cart = () => {
       ))}
       <div className="total">
         <span>SUBTOTAL</span>
-        <span>${totalPrice()}</span>
+        <span>PLN {totalPrice()}</span>
       </div>
       <button onClick={handlePayment}>PROCEED TO CHECKOUT</button>
       <span
